@@ -1,0 +1,86 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <header id="header">
+        <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+                  <div id="logo">
+                    <a href="index.html"><h:graphicImage name="img/logo.png" library="images" /></a>
+                    
+                  </div>
+                  <nav id="nav-menu-container">
+                    <ul class="nav-menu">
+                      <li class="menu-active"><a href="#home">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#fact">Fact</a></li>
+                      <li><a href="#price">Price</a></li>
+                      <li><a href="#course">Course</a></li>
+                      <li class="menu-has-children"><a href="">Pages</a>
+                        <ul>
+                          <li><a href="generic.html">Generic</a></li>
+                          <li><a href="elements.html">Elements</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav><!-- #nav-menu-container -->	
+                  
+                  <div class="btn-group navbar-right">
+                      
+                      <c:if test="#{facesContext.externalContext.sessionMap.get('user') != null}" >
+                          <h:form>
+                            <button class="btn btn-info navbar-btn ">
+                              <span class="glyphicon glyphicon-user"></span> #{facesContext.externalContext.sessionMap.get("user").name}
+                            </button>
+                              
+                            <h:commandButton styleClass="btn btn-info navbar-btn" 
+                                             action="#{userBean.logout()}" 
+                                             value="Đăng xuất">
+                                <span class="glyphicon glyphicon-check"></span>
+                            </h:commandButton>
+                          </h:form>
+                      </c:if>
+                      
+                      <c:if test="#{facesContext.externalContext.sessionMap.get('user') == null}">
+                          <h:form>
+                          <h:commandButton styleClass="btn btn-info navbar-btn" 
+                                           action="#{userBean.goToLogin()}" 
+                                           value="Đăng nhập"/>
+                          <h:commandButton styleClass="btn btn-info navbar-btn"
+                                           action="#{userBean.goToRegister()}"
+                                           value="Đăng ký"/>
+                          </h:form>
+                      </c:if>
+                    
+                  </div>
+                  
+            </div>
+        </div>
+    </header><!-- #header -->
+    
+    <!-- start banner Area -->
+    <section class="banner-area" id="home">	
+        <div class="container">
+            <div class="row fullscreen d-flex align-items-center justify-content-start">
+                <div class="banner-content col-lg-7">
+                    <h5 class="text-white text-uppercase">Author: Travor James</h5>
+                    <h1 class="text-uppercase">
+                            New Adventure				
+                    </h1>
+                    <p class="text-white pt-20 pb-20">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp <br /> or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+                    </p>
+                    <a href="#" class="primary-btn text-uppercase">Buy Now for $9.99</a>
+                </div>
+                <div class="col-lg-5 banner-right">
+                    
+                    <h:graphicImage name="img/header-img.png" library="images" />
+                </div>												
+            </div>
+        </div>
+    </section>
+    <!-- End banner Area -->	
+    
+</ui:composition>

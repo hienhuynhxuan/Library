@@ -1,0 +1,95 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <!-- Start new book 
+    <c:forEach var="author" items="#{authorBean.authors}">
+        <h1>#{author.ten}</h1>
+    </c:forEach>
+    -->
+        
+    <section class="course-area section-gap" id="course">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-60 col-lg-9">
+                    <div class="title text-center">
+                            <h1 class="mb-10">Sách mới trong tháng</h1>
+                            <p>sách luôn được cập nhập vào ngày đầu tiên mỗi tháng</p>
+                    </div>
+                </div>
+                
+                <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="10000">
+                            <h:graphicImage name="img_sach/book2.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                            <h:graphicImage name="img_sach/book2.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                        </div>
+                        <div class="carousel-item">
+                            <h:graphicImage name="img_sach/book2.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>	
+            </div>
+        </div>
+    </section>
+    
+    <!-- End new book -->
+    
+    
+    <section class="course-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h:graphicImage name="img_hoatdong/1.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                            </div>
+                            <div class="carousel-item">
+                                <h:graphicImage name="img_hoatdong/2.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                            </div>
+                            <div class="carousel-item">
+                                <h:graphicImage name="img_hoatdong/3.jpg" library="images" styleClass="d-block w-100 img-fluid"/>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/0vg7i_ugWYo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</ui:composition>

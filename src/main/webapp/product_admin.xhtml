@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/base.xhtml">
+            <ui:define name="content">
+                <div class="container">
+                    <h1>Trang Quan Tri</h1>
+                    <h:dataTable var="book" value="#{productBean.books}" styleClass="table table-hover">
+                        <h:column>
+                            <f:facet name="header">id</f:facet>
+                            #{book.id}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">mã ISBN</f:facet>
+                            #{book.ISBN}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">ten</f:facet>
+                            #{book.tenSach}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">năm xuất bản</f:facet>
+                            #{book.namXuatBan}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">lần xuất bản</f:facet>
+                            #{book.lanXuatBan}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">loại sách</f:facet>
+                            #{book.category}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">tác giả</f:facet>
+                            #{book.author}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header"></f:facet>
+                            <h:form>
+                                <h:link value="cập nhập"
+                                    includeViewParams="true" 
+                                        outcome="add_product?face-redirect=true">
+                                    <f:param name="bookId" value="#{book.id}" />
+                                </h:link>
+                                |
+                                <h:commandLink value="Xóa">
+                                    <f:ajax listener="#{productBean.deleteBook(book)}"
+                                            onevent="success"/>
+                                </h:commandLink>
+                            </h:form>
+                            
+                        </h:column>
+                    </h:dataTable>
+                </div>
+                <script>
+                    function success(result) {
+                        alert("xóa thanhf công");
+                    }
+                </script>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

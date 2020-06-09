@@ -1,0 +1,16 @@
+com\nkd\service\CategoryService.class
+com\nkd\bean\CatBean.class
+com\nkd\bean\AuthorBean.class
+com\nkd\bean\ProductBean.class
+com\nkd\converter\AuthorConverter.class
+com\nkd\service\AuthorService.class
+com\nkd\converter\CategoryConverter.class
+com\nkd\pojo\User.class
+com\nkd\pojo\Author.class
+com\nkd\validator\UploadValidator.class
+com\nkd\conf\HibernateUtil.class
+com\nkd\pojo\Book.class
+com\nkd\pojo\Category.class
+com\nkd\bean\UserBean.class
+com\nkd\service\BookService.class
+com\nkd\service\UserService.class
