@@ -13,17 +13,18 @@
                   </div>
                   <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                      <li class="menu-active"><a href="#home">Home</a></li>
-                      <li><a href="#about">About</a></li>
-                      <li><a href="#fact">Fact</a></li>
-                      <li><a href="#price">Price</a></li>
-                      <li><a href="#course">Course</a></li>
+                      <li class="menu-active"><a href="index.xhtml">Trang chủ</a></li>
+                      <li><a href="#about">Tài liệu mới</a></li>
+                      <li><a href="#fact">Tra cứu</a></li>
+                      <li><a href="#price">Tài liệu số</a></li>
+                      <li><a href="#footer">Liên hệ</a></li>
                       <li class="menu-has-children"><a href="">Pages</a>
                         <ul>
-                          <li><a href="generic.html">Generic</a></li>
-                          <li><a href="elements.html">Elements</a></li>
+                          <li><a href="add_product.xhtml">Thêm sách</a></li>
+                          <li><a href="product_admin.xhtml">Quản lý sách</a></li>
                         </ul>
                       </li>
+                      
                     </ul>
                   </nav><!-- #nav-menu-container -->	
                   
@@ -31,11 +32,12 @@
                       
                       <c:if test="#{facesContext.externalContext.sessionMap.get('user') != null}" >
                           <h:form>
-                            <button class="btn btn-info navbar-btn ">
-                              <span class="glyphicon glyphicon-user"></span> #{facesContext.externalContext.sessionMap.get("user").name}
+                            <button class="btn btn-light navbar-btn">
+                              <span class="glyphicon glyphicon-user"></span> 
+                              #{facesContext.externalContext.sessionMap.get("user").name}
                             </button>
                               
-                            <h:commandButton styleClass="btn btn-info navbar-btn" 
+                            <h:commandButton styleClass="btn btn-light navbar-btn" 
                                              action="#{userBean.logout()}" 
                                              value="Đăng xuất">
                                 <span class="glyphicon glyphicon-check"></span>
@@ -45,10 +47,10 @@
                       
                       <c:if test="#{facesContext.externalContext.sessionMap.get('user') == null}">
                           <h:form>
-                          <h:commandButton styleClass="btn btn-info navbar-btn" 
+                          <h:commandButton styleClass="btn btn-light navbar-btn" 
                                            action="#{userBean.goToLogin()}" 
                                            value="Đăng nhập"/>
-                          <h:commandButton styleClass="btn btn-info navbar-btn"
+                          <h:commandButton styleClass="btn btn-light navbar-btn"
                                            action="#{userBean.goToRegister()}"
                                            value="Đăng ký"/>
                           </h:form>

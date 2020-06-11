@@ -4,6 +4,7 @@ com\nkd\bean\AuthorBean.class
 com\nkd\bean\ProductBean.class
 com\nkd\converter\AuthorConverter.class
 com\nkd\service\AuthorService.class
+com\nkd\filter\UserFilter.class
 com\nkd\converter\CategoryConverter.class
 com\nkd\pojo\User.class
 com\nkd\pojo\Author.class

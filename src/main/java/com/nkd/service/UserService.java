@@ -38,6 +38,23 @@ public class UserService {
         return false;
     }
     
+    public boolean updateUser(User u){
+        try (Session session = factory.openSession()){
+            try {
+                session.getTransaction().begin();
+            
+                session.saveOrUpdate(u);
+
+                session.getTransaction().commit();
+                return true;
+            } catch (Exception ex) {
+                session.getTransaction().rollback();
+            }
+        }
+        return false;
+    }
+    
+    
     public User login(String username, String password){
         password = DigestUtils.md5Hex(password);
         try (Session session = factory.openSession()){
@@ -50,5 +67,9 @@ public class UserService {
             
             return session.createQuery(q).getSingleResult();
         }
+    }
+
+    public User getUserById(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

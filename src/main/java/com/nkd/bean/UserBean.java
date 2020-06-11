@@ -28,6 +28,7 @@ public class UserBean {
     private String password;
     @Transient 
     private String confirmPassword;
+    private String role;
     private static UserService userService = new UserService();
     
     public String register(){
@@ -37,6 +38,7 @@ public class UserBean {
             u.setEmail(email);
             u.setUsername(username);
             u.setPassword(password);
+            u.setuRole("USER");
             
             if(userService.addUser(u) == true)
                 return "login?faces-redirect=true";
@@ -45,13 +47,25 @@ public class UserBean {
 //          return "error?faces-redirect=true"; 
     }
     
+    public String update(){
+        User u = userService.getUserById(this.username);
+        if("ADMIN".equals(this.role))
+            u.setuRole("ADMIN");
+        else
+            u.setuRole("USER");
+        if(userService.updateUser(u) == true)
+            return "change_user?faces-redirect=true";
+        return "change_user?faces-redirect=true";
+    }
+    
     public String login(){
         User u = userService.login(username, password);
+       
         if(u != null){
-            FacesContext.getCurrentInstance().getExternalContext()
-                    .getSessionMap().put("user", u);
-            
-            return "index?faces-rediect=true";
+        FacesContext.getCurrentInstance().getExternalContext()
+                .getSessionMap().put("user", u);
+
+        return "index?faces-rediect=true";
         }
         
         return "login";

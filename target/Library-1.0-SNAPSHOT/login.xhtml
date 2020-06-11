@@ -4,10 +4,10 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core">
     <ui:define name="header">
-        <title>Đăng nhập</title>
+        
     </ui:define>
     <ui:define name="content">
-        <h:messages />
+       
         <f:metadata>
             <f:viewAction action="#{userBean.checkLogin()}"/>
         </f:metadata>
@@ -18,18 +18,25 @@
                 <h:outputLabel value="Tên đăng nhập" />
                 <h:inputText id="txtUserName" 
                              value="#{userBean.username}"
-                             styleClass="form-control" />
+                             styleClass="form-control"/>
+                <h:message for="txtUserName" style="color:red;"/>
             </div>
             <div class="form-group">
                 <h:outputLabel value="Mật khẩu" />
                 <h:inputSecret id="txtPassword" 
                              value="#{userBean.password}"
-                             styleClass="form-control" />
+                             styleClass="form-control"/>
+                <h:message for="txtUserName" style="color:red;"/>
             </div>
             <div class="form-group">
                 <h:commandButton value="Đăng nhập" 
                                  action="#{userBean.login()}"
-                                 class="btn btn-warning" />
+                                 class="btn btn-warning"/>
+            </div>
+            <div class="form-group">
+                <h:commandButton value="Đăng ký" 
+                                 action="#{userBean.goToRegister()}"
+                                 class="btn btn-danger" />
             </div>
         </div>
         </h:form>
